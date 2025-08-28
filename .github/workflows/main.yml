@@ -1,3 +1,11 @@
+- name: Fetch latest from remote
+  run: git pull origin main
+
+- name: Push to Hugging Face
+  run: git push https://huggingface.co/spaces/manaptechie/LLM_Search_Engine main
+  env:
+    HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    
 name: Sync to Hugging Face hub
 on:
   push:
